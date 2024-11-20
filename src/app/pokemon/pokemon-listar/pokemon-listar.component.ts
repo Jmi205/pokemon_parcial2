@@ -15,7 +15,7 @@ export class PokemonListarComponent implements OnInit {
   constructor(private pokemonService: PokemonService) { }
 
   getPokemons(): void{
-    this.pokemonService.getPokemons()
+    this.pokemons = this.pokemonService.getPokemons()
   }
 
   onSelect(pokemon: PokemonDetailDto): void {
