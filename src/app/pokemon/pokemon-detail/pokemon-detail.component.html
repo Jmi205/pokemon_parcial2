@@ -7,8 +7,9 @@
       <p class="card-text">Altura: {{ pokemonDetail.height}}</p>
       <p class="card-text">Peso: {{ pokemonDetail.weight}}</p>
       <p class="card-text">Id: {{ pokemonDetail.id}}</p>
+      <h3>Habilidades Pokemon</h3>
       <div *ngFor="let abilitie of pokemonDetail.abilities">
-        <p class="card-text" class="card-text">{{abilitie.ability.name}}</p>
+        <p class="card-text"> Habilidad: {{abilitie.ability.name}}</p>
       </div>
     </div>
   </div>

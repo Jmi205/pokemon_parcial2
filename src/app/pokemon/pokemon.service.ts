@@ -8,10 +8,20 @@ import { PokemonDetailDto } from './pokemonDetailDto';
 })
 export class PokemonService {
   apiUrl : string = "https://pokeapi.co/api/v2/pokemon/";
+  typeApiUrl: string = "https://pokeapi.co/api/v2/type/";
 
   constructor(private http : HttpClient) { }
 
   getPokemons(): PokemonDetailDto[] {
+    let pokemons : PokemonDetailDto[] = [];
+    for (let i = 1; i <= 20; i++) {
+      this.getPokemon(i.toString()).subscribe((pokemon) => {
+        pokemons.push(pokemon);
+      });
+    }
+    return pokemons;
+  }
+  getPokemonsType(type: String): PokemonDetailDto[] {
     let pokemons : PokemonDetailDto[] = [];
     for (let i = 1; i <= 20; i++) {
       this.getPokemon(i.toString()).subscribe((pokemon) => {
